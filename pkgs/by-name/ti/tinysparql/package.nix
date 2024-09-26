@@ -110,7 +110,9 @@ stdenv.mkDerivation (finalAttrs: {
     # https://gitlab.gnome.org/GNOME/tinysparql/-/issues/402
     !stdenv.hostPlatform.isDarwin
     # https://gitlab.gnome.org/GNOME/tinysparql/-/issues/398
-    && !stdenv.hostPlatform.is32bit;
+    && !stdenv.hostPlatform.is32bit
+    # https://gitlab.gnome.org/GNOME/tinysparql/-/issues/474
+    && !stdenv.hostPlatform.isMusl;
 
   postPatch = ''
     chmod +x \
