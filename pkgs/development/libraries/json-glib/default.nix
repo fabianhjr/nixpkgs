@@ -4,6 +4,7 @@
 , docutils
 , glib
 , meson
+, mesonEmulatorHook
 , ninja
 , nixosTests
 , pkg-config
@@ -53,6 +54,8 @@ stdenv.mkDerivation rec {
   ] ++ lib.optionals withIntrospection [
     gobject-introspection
     gi-docgen
+  ] ++ lib.optionals (!stdenv.buildPlatform.canExecute stdenv.hostPlatform) [
+    mesonEmulatorHook
   ];
 
   propagatedBuildInputs = [
