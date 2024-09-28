@@ -31,7 +31,6 @@
   libselinux,
   libcloudproviders,
   gdk-pixbuf,
-  substituteAll,
   gnome-desktop,
   gst_all_1,
   gsettings-desktop-schemas,
