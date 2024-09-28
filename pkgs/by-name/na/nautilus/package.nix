@@ -57,12 +57,6 @@ stdenv.mkDerivation (finalAttrs: {
   patches = [
     # Allow changing extension directory using environment variable.
     ./extension_dir.patch
-
-    # Hardcode required paths.
-    (substituteAll {
-      src = ./fix-paths.patch;
-      inherit tinysparql;
-    })
   ];
 
   nativeBuildInputs = [
