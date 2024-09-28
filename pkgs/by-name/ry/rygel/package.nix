@@ -1,11 +1,14 @@
-{ lib, stdenv
+{ stdenv
+, lib
 , fetchurl
+, docbook-xsl-nons
 , meson
 , ninja
 , pkg-config
 , vala
 , gettext
 , libxml2
+, libxslt
 , gobject-introspection
 , wrapGAppsHook3
 , python3
@@ -43,12 +46,14 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   nativeBuildInputs = [
+    docbook-xsl-nons
     meson
     ninja
     pkg-config
     vala
     gettext
     libxml2
+    libxslt # for xsltproc
     gobject-introspection
     wrapGAppsHook3
     python3
